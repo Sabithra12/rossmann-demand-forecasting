@@ -1,0 +1,16 @@
+# Raw Kaggle data (download from Kaggle instead)
+data/train.csv
+data/test.csv
+data/store.csv
+data/sample_submission.csv
+
+# Secrets
+.env
+
+# Python / Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Power BI temp files
+*.pbix.tmp
