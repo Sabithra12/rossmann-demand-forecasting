@@ -42,8 +42,8 @@ flowchart LR
 
 ```
 rossmann-forecasting/
+├── 01_eda.ipynb    # EDA, features, model, inventory (run from this folder)
 ├── sql/            # setup script + analysis queries
-├── notebooks/      # 01_eda.ipynb (EDA, features, model, inventory)
 ├── app/            # Flask app, trained model and small input files
 ├── dashboard/      # rossmann_dashboard.pbix
 ├── data/           # small derived CSVs used by Power BI (raw Kaggle files excluded)
@@ -124,7 +124,7 @@ Select a store and a promotion plan (none, Monday to Friday, or all days). The a
 
 1. Install PostgreSQL, create a database named `rossmann`, run `sql/00_setup.sql`, and import `train.csv` and `store.csv` from Kaggle into the `train` and `store` tables (pgAdmin: Import/Export Data, header on). Then run the `train_clean` statement at the end of `00_setup.sql`.
 2. `pip install pandas matplotlib seaborn sqlalchemy psycopg2-binary lightgbm scikit-learn scipy jupyter flask`
-3. Set the database password as an environment variable (`PGPASSWORD`) and run `notebooks/01_eda.ipynb` top to bottom.
+3. Run `01_eda.ipynb` top to bottom (open it from the project root so the `data/`, `images/` and `app/` paths resolve). The first cell asks for your PostgreSQL password; it is not stored in the notebook.
 4. Start the app: `cd app` then `python app.py`, and open http://127.0.0.1:5000
 
 ## 12. Limitations
